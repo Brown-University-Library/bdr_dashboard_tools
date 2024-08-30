@@ -1,7 +1,7 @@
 import argparse
 from .create import create
 
-def run( args: list ):
+def run( args: list ) -> None:
     print( 'in create_foo.cli.run(); preparing arg-parser' )
     parser = argparse.ArgumentParser(description="Create Foo Command")
     parser.add_argument('--data', required=True, help='Data to create foo with')
@@ -10,4 +10,4 @@ def run( args: list ):
 
     print( '...and about to call create_foo.create.create()' )
     create( data )  # Pass the parsed data to the create function
-
+    return
