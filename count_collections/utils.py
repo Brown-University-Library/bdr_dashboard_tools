@@ -1,7 +1,6 @@
 import json, urllib.request
 # import urllib.request
 
-from columnar import columnar
 
 
 def helper_function( data: str ) -> str:
@@ -11,7 +10,7 @@ def helper_function( data: str ) -> str:
     return data
 
 
-def get_bdr_collections():
+def get_bdr_collections() -> dict:
     '''returns a dict like "'collection name':[number of items]"'''
 
     collection_field = 'ir_collection_name' # field to facet on
