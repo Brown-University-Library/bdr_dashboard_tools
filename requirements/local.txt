@@ -7,7 +7,9 @@
 build==1.2.1
     # via pip-tools
 click==8.1.7
-    # via pip-tools
+    # via
+    #   pip-tools
+    #   shiv
 columnar==1.4.1
     # via -r ./requirements/./base.txt
 importlib-metadata==8.4.0
@@ -20,6 +22,8 @@ pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
+shiv==1.0.6
+    # via -r ./requirements/local.in
 tomli==2.0.1
     # via
     #   build

@@ -1,3 +1,4 @@
 -r ./base.txt
 
 pip-tools~=7.4.0
+shiv~=1.0.0
