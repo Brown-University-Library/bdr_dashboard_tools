@@ -1,6 +1,11 @@
-import sys
-from .count_collections import cli as count_collections_cli
-from .update_foo import cli as update_cli
+import pathlib, sys
+
+## add the project directory to the sys.path
+parent_dir = pathlib.Path(__file__).resolve().parent
+sys.path.append( str(parent_dir.parent) )
+
+from tools.count_collections import cli as count_collections_cli
+from tools.update_foo import cli as update_cli
 
 
 def main():
