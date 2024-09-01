@@ -23,7 +23,7 @@ setup(
     entry_points={
         'console_scripts': ['main=main:main'],
     },
-    ## eventuall load this from base.txt
+    ## eventually load this from base.txt
     install_requires=[
         'columnar==1.4.1',
         'toolz==0.12.1',
