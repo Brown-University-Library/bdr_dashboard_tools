@@ -42,7 +42,7 @@ The same command, with explanatory info...
 
 ```
 % shiv \
-  --console-script main \  # tells shiv how to use `setup.py` to make the binary run `main()` when started
+  --console-script run_this \  # tells shiv to use the entry point defined as "run_this" in the setup.py's `console_scripts` section, in this case, to run the `main()` function from `tools/main.py`.
   --output-file ./tools_binary \  # binary output path
   ./tools  # the path containing `setup.py`
 ```

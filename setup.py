@@ -21,7 +21,7 @@ setup(
     description='Various BDR-related tools.',
     py_modules=['main', 'commit_info'],
     entry_points={
-        'console_scripts': ['main=main:main'],
+        'console_scripts': ['run_this=main:main'],
     },
     ## eventually load this from base.txt
     install_requires=[

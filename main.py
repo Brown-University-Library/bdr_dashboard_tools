@@ -5,8 +5,6 @@ parent_dir = pathlib.Path(__file__).resolve().parent
 sys.path.append( str(parent_dir.parent) )
 print( f'sys-path:, ``{pprint.pformat(sys.path)}``' )
 
-# from tools.count_collections import cli as count_collections_cli
-# from tools.update_foo import cli as update_cli
 
 try:
     from tools.count_collections import cli as count_collections_cli
