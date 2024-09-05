@@ -1,7 +1,7 @@
 # from setuptools import setup, find_packages
 
 import subprocess
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def get_git_commit_hash() -> str:
     try:
@@ -20,8 +20,9 @@ setup(
     version='1.1.1',
     description='Various BDR-related tools.',
     py_modules=['main', 'commit_info'],
+    packages=find_packages(),
     entry_points={
-        'console_scripts': ['run_this=main:main'],
+        'console_scripts': ['run_this=code_to_package.main:main'],
     },
     ## eventually load this from base.txt
     install_requires=[

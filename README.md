@@ -3,48 +3,36 @@
 
 This is a collection of command-line tools packaged using `shiv`. The tools are organized into different modules, each serving a specific purpose.
 
+
 ## Modules
 
-- `create_foo`: A tool for creating something.
+- `count_collections`: A tool for grabbing collections stats.
 - `update_foo`: A tool for updating something.
 
-## Usage
 
-After packaging with `shiv`, you can run the tools as follows:
+## Usage — Development
 
 ```bash
-$ tools create_foo --data "bar"
-$ tools update_foo --data "baz"
-```
-
----
-
-
-## Development Usage
-
-$ cd /to/tools_stuff
-$ source ./env/bin/activate
+$ cd /to/tools/
+$ source ../venv_tools/bin/activate
+(venv_tools) $ python ./code_to_package/main.py count_collections --data "bar" 
+...or...
 (venv_tools) $ python -m tools.main create_foo --data "bar"
-
----
-
-
-## Optional: To create binary
-
-
-(from ./tools_stuff/)  
-
-```
-% shiv --console-script main --output-file ./tools_binary ./tools
 ```
 
-The same command, with explanatory info...
 
-```
-% shiv \
-  --console-script run_this \  # tells shiv to use the entry point defined as "run_this" in the setup.py's `console_scripts` section, in this case, to run the `main()` function from `tools/main.py`.
-  --output-file ./tools_binary \  # binary output path
-  ./tools  # the path containing `setup.py`
+## Usage — Binary
+
+```bash
+$ tools_binary count_collections --data "bar"
+$ tools_binary update_foo --data "baz"
 ```
 
-This command creates the binary `tools_binary`, in the outer "stuff" directory, which can put anywhere and be called by another script. Note that the binary should be saved outside of the git-directory so that there is no new `git commit` to execute. This allows the binary to be run with the `--version` flag, and for the version to match the current commit.
+
+## To create, then use the binary
+
+```bash
+$ cd /to/tools/
+$ bash ./build.sh
+$ ../tools_binary count_collections --data "bar"
+```

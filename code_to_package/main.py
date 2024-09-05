@@ -5,13 +5,15 @@ parent_dir = pathlib.Path(__file__).resolve().parent
 sys.path.append( str(parent_dir.parent) )
 print( f'sys-path:, ``{pprint.pformat(sys.path)}``' )
 
+from code_to_package.count_collections import cli as count_collections_cli
+from code_to_package.update_foo import cli as update_cli
 
-try:
-    from tools.count_collections import cli as count_collections_cli
-    from tools.update_foo import cli as update_cli
-except ImportError as e:
-    from .count_collections import cli as count_collections_cli
-    from .update_foo import cli as update_cli
+# try:
+#     from tools.count_collections import cli as count_collections_cli
+#     from tools.update_foo import cli as update_cli
+# except ImportError as e:
+#     from .count_collections import cli as count_collections_cli
+#     from .update_foo import cli as update_cli
 
 
 def main():
