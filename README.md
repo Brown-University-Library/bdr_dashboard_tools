@@ -13,11 +13,11 @@ This is a collection of command-line tools packaged using `shiv`. The tools are 
 ## Usage — Development
 
 ```bash
-$ cd /to/tools/
-$ source ../venv_tools/bin/activate
-(venv_tools) $ python ./code_to_package/main.py count_collections --data "bar" 
+$ cd /to/bdr_dashboard_tools/
+$ source ../env/bin/activate
+(env) $ python ./code_to_package/main.py count_collections --data "bar" 
 ...or...
-(venv_tools) $ python -m tools.main create_foo --data "bar"
+(env) $ python -m code_to_package.main count_collections --data "bar"
 ```
 
 
