@@ -1,5 +1,11 @@
+import logging
+
+
+log = logging.getLogger( __name__ )
+
+
 def helper_function( data: str ) -> str:
-    print( 'in update_foo.utils.helper_function()' )
+    log.debug( 'in update_foo.utils.helper_function()' )
     data = data.upper()
-    print( f'...data is now: ``{data}``' )
+    log.debug( f'...data is now: ``{data}``' )
     return data

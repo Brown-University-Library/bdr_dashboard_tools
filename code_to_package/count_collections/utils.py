@@ -1,12 +1,14 @@
-import json, urllib.request
+import logging, json, urllib.request
 # import urllib.request
 
 
+log = logging.getLogger( __name__ )
+
 
 def helper_function( data: str ) -> str:
-    print( 'in create_foo.utils.helper_function()' )
+    log.debug( 'in create_foo.utils.helper_function()' )
     data = data.upper()
-    print( f'...data is now: ``{data}``' )
+    log.debug( f'...data is now: ``{data}``' )
     return data
 
 
