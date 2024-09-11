@@ -4,15 +4,15 @@ set -e  # exits immediately on any error
 set -x  # print the command before executing it
 
 ## check that the script is running from the correct directory
-DIR_NAME="tools"
+DIR_NAME="bdr_dashboard_tools"
 if [ "$(basename "$PWD")" != "$DIR_NAME" ]; then
   echo "Error: Run this script from the '$DIR_NAME' directory."
   exit 1
 fi
 
-source ../venv_build/bin/activate  # so we have access to shiv
+source ../env/bin/activate  # so we have access to shiv
 
-shiv --output-file ../tools_binary --compressed --reproducible --console-script run_this  ./ --upgrade
+shiv --output-file ../bdr_dashboard_tools_binary --compressed --reproducible --console-script run_this  ./ --upgrade
 
 
 ## explanation...
