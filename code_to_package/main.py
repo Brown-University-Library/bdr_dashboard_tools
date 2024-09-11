@@ -2,7 +2,7 @@ import logging, os, pathlib, pprint, sys
 
 
 ## setup logging ----------------------------------------------------
-LOGLEVEL: str = os.environ.get( 'UM__LOGLEVEL', 'DEBUG' )  # 'DEBUG' or 'INFO'
+LOGLEVEL: str = os.environ.get( 'UM__LOGLEVEL', 'INFO' )  # 'DEBUG' or 'INFO'
 lglvldct = {
     'DEBUG': logging.DEBUG,
     'INFO': logging.INFO }
@@ -20,8 +20,6 @@ log.debug( f'sys-path:, ``{pprint.pformat(sys.path)}``' )
 
 from code_to_package.count_collections import cli as count_collections_cli
 from code_to_package.update_foo import cli as update_cli
-
-
 
 
 def main():
