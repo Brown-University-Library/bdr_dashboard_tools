@@ -19,7 +19,7 @@ sys.path.append( str(parent_dir.parent) )
 log.debug( f'sys-path:, ``{pprint.pformat(sys.path)}``' )
 
 from code_to_package.count_collections import cli as count_collections_cli
-from code_to_package.search_collection_name import cli as update_cli
+from code_to_package.search_collection_name import cli as search_collection_name_cli
 
 
 def main():
@@ -27,15 +27,15 @@ def main():
         command = sys.argv[1]
         args: list = sys.argv[2:]  # Collect all the additional arguments after the command
         if command == 'count_collections':
-            log.debug( 'in count_collections.main.main(); calling count_collections.cli.run()' )
+            log.debug( 'calling count_collections.cli.run()' )
             count_collections_cli.run(args)
-        elif command == 'update_foo':
-            log.debug( 'in update_foo.main.main(); calling update_foo.cli.run()' )
-            update_cli.run(args)
+        elif command == 'search_collection_name':
+            log.debug( 'calling search_collection_name_cli.run()' )
+            search_collection_name_cli.run(args)
         else:
-            log.debug(f'Unknown command: `{command}`')
+            print(f'Unknown command: `{command}`')
     else:
-        log.debug('No command provided.')
+        print('No command provided.')
 
 
 if __name__ == '__main__':
