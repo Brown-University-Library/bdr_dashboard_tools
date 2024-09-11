@@ -12,27 +12,40 @@ This is a collection of command-line tools packaged using `shiv`. The tools are 
 
 ## Usage — Development
 
+pattern: main.py file, then module, then flags
+
+example:
+
 ```bash
 $ cd /to/bdr_dashboard_tools/
 $ source ../env/bin/activate
-(env) $ python ./code_to_package/main.py count_collections --data "bar" 
+(env) $ python ./code_to_package/main.py count_collections --output "json" 
 ...or...
-(env) $ python -m code_to_package.main count_collections --data "bar"
+(env) $ python -m code_to_package.main count_collections --output "json" 
 ```
 
 
 ## Usage — Binary
 
+pattern: binary, then module, then flags
+
+example:
+
 ```bash
-$ tools_binary count_collections --data "bar"
-$ tools_binary update_foo --data "baz"
+$ bdr_dashboard_tools_binary count_collections --output "json"
+```
+
+example using the other module:
+
+```bash
+$ bdr_dashboard_tools_binary search_collection_name --output "text" --collection_name "Digitizing Timbuktu"
 ```
 
 
 ## To create, then use the binary
 
 ```bash
-$ cd /to/tools/
+$ cd /to/bdr_dashboard_tools/
 $ bash ./build.sh
-$ ../tools_binary count_collections --data "bar"
+$ ../bdr_dashboard_tools_binary count_collections --output "json"
 ```
