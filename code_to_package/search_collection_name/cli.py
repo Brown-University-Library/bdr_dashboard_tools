@@ -16,12 +16,12 @@ def run( args: list ) -> None:
     parser = argparse.ArgumentParser( description='Parses search_collection_name arguments' )
     parser.add_argument( '--collection_name', required=False, help='collection name to search for' )
     parser.add_argument( '--collection_json_array_filepath', required=False, help='input.json file, of array of names, to load' )
-    parser.add_argument( '--output', required=True, help='"json" or "columnar"' )
+    parser.add_argument( '--output', required=True, help='"json" or "text"' )
     parsed_args = parser.parse_args(args)
     ## validate output arg ------------------------------------------
     output_data_format: str = parsed_args.output
-    if output_data_format not in ['json', 'columnar']:
-        msg = f'Invalid data format: `{output_data_format}`; output should be "json" or "columnar"' 
+    if output_data_format not in ['json', 'text']:
+        msg = f'Invalid data format: `{output_data_format}`; output should be "json" or "text"' 
         raise ValueError( msg )
     ## validate collection args -------------------------------------
     collection_name = parsed_args.collection_name
