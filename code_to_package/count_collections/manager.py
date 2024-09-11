@@ -12,12 +12,12 @@ log = logging.getLogger( __name__ )
 
 
 def manage_processing( data: str ):
-    """ Manages the processing.
+    """ Manages processing.
         Code credit: <https://github.com/contrick64>
         Called by cli.run() with the parsed args. """
-    log.debug( f'in create_foo.manage.manage_processing(); data: ``{data}``')
+    ## get bdr top-collections data ---------------------------------
     bdr_collections: dict = get_bdr_collections()
-
+    ## format output ------------------------------------------------
     if data == 'json':
         info_dict = { 
             'data': bdr_collections, 
@@ -27,5 +27,5 @@ def manage_processing( data: str ):
     else:
         colls_table = [ [key,value] for key,value in bdr_collections.items() ]
         table_headers = [ 'collection','no. items' ]
-        print(columnar( colls_table,headers=table_headers,no_borders=True) )
+        print( columnar(colls_table,headers=table_headers,no_borders=True) )
         print( f'Total number of collections: {len(bdr_collections)}' )    
