@@ -1,3 +1,9 @@
+"""
+cli.py... 
+- parses and validates the module-specific command-line arguments
+- calls the module's manager-function with the parsed arguments
+"""
+
 import argparse, logging
 from .manager import manage_processing
 
