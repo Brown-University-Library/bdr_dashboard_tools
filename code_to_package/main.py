@@ -2,7 +2,7 @@ import logging, os, pathlib, pprint, sys
 
 
 ## setup logging ----------------------------------------------------
-LOGLEVEL: str = os.environ.get( 'UM__LOGLEVEL', 'INFO' )  # 'DEBUG' or 'INFO'
+LOGLEVEL: str = os.environ.get( 'BDT__LOGLEVEL', 'INFO' )  # 'DEBUG' or 'INFO' (namespacing for "BDR Dashboard Tools")
 lglvldct = {
     'DEBUG': logging.DEBUG,
     'INFO': logging.INFO }
