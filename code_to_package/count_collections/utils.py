@@ -1,4 +1,4 @@
-import logging, json, urllib.request
+import logging, json, pprint, urllib.request
 # import urllib.request
 
 
@@ -13,13 +13,20 @@ def helper_function( data: str ) -> str:
 
 
 def get_bdr_collections() -> dict:
-    '''returns a dict like "'collection name':[number of items]"'''
-
+    ''' Returns a dict like "'collection name':[number of items]"
+        Called by count_collections.manager.manage_processing() '''
     collection_field = 'ir_collection_name' # field to facet on
     bdr_api = 'https://repository.library.brown.edu/api/search/'
-    solr_query = f'?q=*&facet=on&facet.field={collection_field}&rows=0'
-    query_result = urllib.request.urlopen(bdr_api + solr_query).read()
+    # solr_query = f'?q=*&facet=on&facet.field={collection_field}&rows=0'
+    solr_query = f'?q=*&facet=on&facet.field={collection_field}&rows=0&fl=ir_collection_name,pid'
+    log.debug( f'solr_query, ``{solr_query}``' )
+    full_url = bdr_api + solr_query
+    log.debug( f'full_url, ``{full_url}``' )
+
+    # query_result = urllib.request.urlopen(bdr_api + solr_query).read()
+    query_result = urllib.request.urlopen(full_url).read()
     qjson = json.loads(query_result)
+    log.debug( f'qjson, ```{pprint.pformat(qjson)}```' )
     # drill down to list
     facet_counts = qjson['facet_counts']['facet_fields'][collection_field]
     
