@@ -4,7 +4,7 @@ Calls utils.helper_function() if needed
 """
 
 import logging
-from .utils import helper_function
+from .utils import grab_collection_info
 
 
 log = logging.getLogger( __name__ )
@@ -18,6 +18,8 @@ def manage_processing( collection_name: str, collection_json_array_filepath: str
     log.debug( f'collection_name, ``{collection_name}``' )
     log.debug( f'collection_json_array_filepath, ``{collection_json_array_filepath}``' )
     log.debug( f'output_data_format, ``{output_data_format}``' )
+    if collection_name != None:
+        data: dict = grab_collection_info( collection_name )
     return
 
 

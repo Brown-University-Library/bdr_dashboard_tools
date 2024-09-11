@@ -23,12 +23,11 @@ def get_bdr_collections() -> dict:
     full_url = bdr_api + solr_query
     log.debug( f'full_url, ``{full_url}``' )
 
-    # query_result = urllib.request.urlopen(bdr_api + solr_query).read()
-    query_result = urllib.request.urlopen(full_url).read()
-    qjson = json.loads(query_result)
-    log.debug( f'qjson, ```{pprint.pformat(qjson)}```' )
+    query_result = urllib.request.urlopen( full_url ).read()
+    jsn_dct: dict = json.loads(query_result)
+    log.debug( f'jsn_dct, ```{pprint.pformat(jsn_dct)}```' )
     # drill down to list
-    facet_counts = qjson['facet_counts']['facet_fields'][collection_field]
+    facet_counts = jsn_dct['facet_counts']['facet_fields'][collection_field]
     
     # facet_counts is a list like: 
     #   ['collection name', # items,'collection name', # items, ...]
