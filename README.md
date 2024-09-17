@@ -7,6 +7,10 @@ Next...
 ---
 ---
 
+# Purpose
+
+This project was originally designed as an out-of-work side-project experiment to explore good "packaging" architecture/practices for related tools. Initially it had modules that simply printed "foo" and "bar" -- but I shifted this to...
+
 
 # Tools
 
