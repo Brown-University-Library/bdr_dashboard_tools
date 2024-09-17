@@ -1,3 +1,12 @@
+Under development...
+
+Next...
+- try to add `--version` build-step.
+- possibly update "search_collection_name" to take input from json-output of "count_collections"
+
+---
+---
+
 
 # Tools
 
