@@ -18,6 +18,7 @@ parent_dir = pathlib.Path(__file__).resolve().parent
 sys.path.append( str(parent_dir.parent) )
 log.debug( f'sys-path:, ``{pprint.pformat(sys.path)}``' )
 
+from code_to_package.commit_info import COMMIT_HASH  # for `--version`
 from code_to_package.count_collections import cli as count_collections_cli
 from code_to_package.search_collection_name import cli as search_collection_name_cli
 
@@ -25,13 +26,17 @@ from code_to_package.search_collection_name import cli as search_collection_name
 def main():
     if len(sys.argv) > 1:
         command = sys.argv[1]
+        log.debug( f'command, ``{command}``' )
         args: list = sys.argv[2:]  # Collect all the additional arguments after the command
+        log.debug( f'args, ``{args}``' )
         if command == 'count_collections':
             log.debug( 'calling count_collections.cli.run()' )
             count_collections_cli.run(args)
         elif command == 'search_collection_name':
             log.debug( 'calling search_collection_name_cli.run()' )
             search_collection_name_cli.run(args)
+        elif command == '--version':
+            print( f'version-{COMMIT_HASH}' ); return
         else:
             print(f'Unknown command: `{command}`')
     else:
