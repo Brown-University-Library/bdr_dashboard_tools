@@ -2,6 +2,7 @@ Under development...
 
 Next...
 - try to add `--version` build-step.
+- figure out way to list packages to install from reading local.txt
 - possibly update "search_collection_name" to take input from json-output of "count_collections"
 
 ---
