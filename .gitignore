@@ -1,6 +1,6 @@
 __pycache__
+*.egg-info
 *.pyc
+*commit_info.py
 *pycache*
 build
-commit_info.py
-*.egg-info
