@@ -1,5 +1,7 @@
-# from setuptools import setup, find_packages
-
+"""
+- This script builds an executable stand-alone binary; see the readme for usage instructions.
+- This script is run by the `build.sh` script. Specifically, the shiv command in the build.sh script triggers this.
+"""
 import re, subprocess
 from setuptools import setup, find_packages
 
@@ -22,7 +24,9 @@ def prep_git_commit_hash() -> None:
 
 
 def get_required_packages_from_local_txt(local_txt_path: str) -> list:
-    """ Parses the local.txt file and extract required packages. """
+    """ Parses the local.txt file and extract required packages. 
+        TODO: Update the code so that it'll recognize being run on the dev-server, 
+              in which case it'll use the requirements/staging.txt file."""
     regex = re.compile(r'^[a-zA-Z0-9\-_]+==[0-9]+\.[0-9]+(\.[0-9]+)?')
     with open(local_txt_path, 'r') as f:
         content = f.readlines()
