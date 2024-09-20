@@ -45,7 +45,7 @@ loaded_install_requires = get_required_packages_from_local_txt('./requirements_a
 ## setup() ----------------------------------------------------------
 setup(
     name='bdr_dashboard_tools',
-    version='1.2.3.4',
+    version='1.2.3',  # not using this; the --version flag will display the commit hash... hmmm, does this require an float? i _could_ put the commit hash here!
     description='Various BDR-related tools.',
     py_modules=['main', 'commit_info'],
     packages=find_packages(),
