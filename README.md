@@ -25,6 +25,7 @@ Some nice features:
 - it can be hard to know which version of a binary is in use, running `$ ../bdr_dashboard_tools_binary --version` addresses this.
 - each module has it's own `--help`, ie: `bdr_dashboard_tools_binary count_collections --help`
 - `setup.py` normally has a setup() function that lists the packages to be installed into the binary. This setup.py loads the required packages right from the `local.txt` file, so no need to remember to add packages to the setup.py as new modules are added! _(todo: add code to setup.py to recognize if it's being run from a dev-server, and load `staging.txt` packages if so.)_
+- allows calling-code that uses dotenv envars -- to pass those envars to the binary. Also allows an envar to be set/changed, on the fly, without affecting the local environment (examples way below).
 
 ---
 
