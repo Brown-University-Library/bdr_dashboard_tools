@@ -18,7 +18,10 @@ Some nice features:
 ```bash
 $ mkdir ./bdr_dashboard_tools_stuff
 $ cd ./bdr_dashboard_tools_stuff
+$ git clone git@github.com:birkin/tools.git ./bdr_dashboard_tools
 $ /path/to/python3.8 -m venv ./the_venv
+$ cd ./bdr_dashboard tools
+$ source ../the_venv/bin/activate
 (the_venv) $ pip install -r ./requirements_app/local.txt
 ```
 
