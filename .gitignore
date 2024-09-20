@@ -3,4 +3,4 @@ __pycache__
 *pycache*
 build
 commit_info.py
-tools.egg-info
+*.egg-info
