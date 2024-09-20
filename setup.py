@@ -14,7 +14,7 @@ def prep_git_commit_hash() -> None:
         Called when setup.py is run, which is triggered by the shiv command in the build.sh script."""
     try:
         commit_hash = subprocess.check_output( ['git', 'rev-parse', 'HEAD'] ).strip().decode( 'utf-8' )
-        with open('./commit_info.py', 'w') as f:
+        with open('./code_to_package/commit_info.py', 'w') as f:
             f.write( f"COMMIT_HASH = '{commit_hash}'\n" )
     except Exception as e:
         msg = f'Error obtaining git commit hash: {e}'
