@@ -1,4 +1,4 @@
-# Purpose
+## Purpose
 
 This project was originally designed as an out-of-work side-project experiment to explore good "packaging" architecture/practices for related tools. Initially it had modules that simply printed "foo" and "bar" -- but I shifted this to actually have two simple modules that do something useful.
 
@@ -9,7 +9,7 @@ Some nice features:
 - `setup.py` normally has a setup() function that lists the packages to be installed. This setup.py loads the required packages right from the `local.txt` file, so no need to remember to add packages to the setup.py! _(todo: add code to setup.py to recognized if it's being run from a dev-server, and load `staging.txt` if so.)_
 
 
-# Installation
+## Installation
 
 (for development purposes)
 
@@ -21,7 +21,7 @@ $ /path/to/python3.8 -m venv ./the_venv
 ```
 
 
-# bdr_dashboard_tools -- about
+## bdr_dashboard_tools -- about
 
 This is a collection of command-line tools packaged using `shiv`. The tools are organized into different modules, each serving a specific purpose.
 
