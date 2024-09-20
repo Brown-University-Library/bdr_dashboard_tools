@@ -37,7 +37,7 @@ def get_required_packages_from_local_txt(local_txt_path: str) -> list:
 
 
 ## handle the commit hash -------------------------------------------
-commit_hash: str = prep_git_commit_hash()
+commit_hash = prep_git_commit_hash()
 
 ## prep list of packages to install ---------------------------------
 loaded_install_requires = get_required_packages_from_local_txt('./requirements_app/local.txt')
