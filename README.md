@@ -20,13 +20,37 @@ $ /path/to/python3.8 -m venv ./the_venv
 (the_venv) $ pip install -r ./requirements_app/local.txt
 ```
 
+_(Sensible tip: use the version of python used by the oldest server on which you'll be running the code or binary.)_
+
 
 ## bdr_dashboard_tools -- about
 
-This is a collection of command-line tools packaged using `shiv`. The tools are organized into different modules, each serving a specific purpose.
+This is a collection of command-line tools packaged using `shiv`. The tools are organized into different modules, each serving a specific purpose. But really, this project is to demo a way to package different related-tools together easily.
+
+### Architecture
+
+When a command like:
+```bash
+(env) $ python ./code_to_package/main.py count_collections --output "columnar"
+``` 
+
+or
+
+```bash
+bdr_dashboard_tools_binary count_collections --output "columnar"
+```
+
+...is run, `code_to_package/main.py` is run. 
+
+That file simply handles a possible `--version` flag -- or, it captures the "module" argument and its flags. It then uses the "module" argument to forward the flags to the appropriate module, ie `code_to_package/count_collections/` or `code_to_package/search_collection_name/`.
+
+Each module has a `cli.py`, and a `manager.py` -- and likely a `utils.py`. 
+
+When `code_to_package/main.py` hands off to a module, it hands off to the module's `cli.py`, which validates the args sent to the module. That then hands off to the manager.py's `manage_processing( argument_data )` function, which does the work, either directly, or by using helper-functions from the `utils.py` module.
 
 
-## Modules
+
+## Sample modules
 
 - `count_collections`: Grabs the top 100 collections, sorted by number of items within the collection.
 - `search_collection_name`: Searches the BDR on the given collection-name and returns pid, url, and abstract.
