@@ -1,6 +1,8 @@
 ## Purpose
 
-This project was originally designed as an out-of-work side-project experiment to explore good "packaging" architecture/practices for related tools. Initially it had modules that simply printed "foo" and "bar" -- but I shifted this to actually have two simple modules that do something useful.
+This project was originally designed as an out-of-work side-project experiment to explore good binary "packaging" architecture/practices for related tools, using [shiv], the packager used by and supported by LinkedIn. Initially it had modules that simply printed "foo" and "bar" -- but I shifted this to actually have two simple modules that do something useful.
+
+[shiv]: <https://shiv.readthedocs.io/en/latest/>
 
 Some nice features:
 - if you look at the contents of the `count_collections` dir, and the `search_collection_name` dir, you'll see that their architecture is exactly the same, so it's easy to know how to add a module.
@@ -103,3 +105,5 @@ $ cd /to/bdr_dashboard_tools/
 $ bash ./build.sh
 $ ../bdr_dashboard_tools_binary count_collections --output "json"
 ```
+
+That `build.sh` script runs a `shiv` command that runs the `setup.py` file.
