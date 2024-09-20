@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 ## helpers begin ----------------------------------------------------
 
 
-def prep_git_commit_hash() -> str:
+def prep_git_commit_hash() -> None:
     """ Helper which gets and returns the commit hash of the current repository. 
         The commit has is later written to a file called commit_info.py -- which is imported in the main.py file,
             and used to display the version of the package when the --version flag is passed to the command line.    
